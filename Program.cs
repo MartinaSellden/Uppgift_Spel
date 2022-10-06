@@ -6,7 +6,11 @@ interface ICharacter
 
     void Speak();
     void Move();
+
+    void Fight();
+
 }
+
 
 class Player : ICharacter
 {
@@ -16,11 +20,21 @@ class Player : ICharacter
 
     public void Speak()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("I'm a hero!");
     }
     public void Move()
     {
-        throw new NotImplementedException();
+        Console.Write("Running with sword in hand!");
+    }
+
+    int Damage()
+    {
+        int damage;
+
+        Random random = new Random();
+        damage = random.Next(0, 20);
+
+        return damage;
     }
 
     public Player(string name)
@@ -40,11 +54,26 @@ class Monster : ICharacter
 
     public void Speak()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Aaaaarg!");
     }
     public void Move()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Sneaking around waiting for prey...");    
+    }
+
+    public void Fight()
+    {
+
+    }
+
+    int Damage()
+    {
+        int damage;
+
+        Random random = new Random();
+        damage = random.Next(0, 20);
+
+        return damage;
     }
 
     public Monster(string name)

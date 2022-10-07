@@ -5,7 +5,6 @@ Monster Monster = new Monster("Monster");
 Interaction Interaction = new Interaction();
 Interaction.Fight(Player, Monster);
 
-
 interface ICharacter
 {
     string Name { get; set; }
@@ -28,16 +27,6 @@ class Player : ICharacter
     public void Move()
     {
         Console.Write("Running with sword in hand!");
-    }
-
-    int Damage()
-    {
-        int damage;
-
-        Random random = new Random();
-        damage = random.Next(0, 20);
-
-        return damage;
     }
 
     public Player(string name)
